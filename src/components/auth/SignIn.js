@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../../firebase";
 
@@ -8,7 +8,7 @@ const SignIn = () => {
 
   const signIn = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
       })
@@ -39,7 +39,7 @@ const SignIn = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign In</button>
       </form>
     </div>
   );
