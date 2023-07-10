@@ -4,13 +4,14 @@ import Home from "./Home";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import { AuthProvider } from "./Auth";
+import PrivateRoute from "./PrivateRoute";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <PrivateRoute exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
           </Routes>
